@@ -5,6 +5,7 @@ const geoCode = require("./utils/geoCode.js");
 const getWeatherData = require("./utils/weatherInfo.js");
 
 const app = express();
+const port = process.env.PORT || 3000;
 //Setting paths for express config
 const pathOfPublicFolder = path.join(__dirname, "../public");
 const viewsPathForHbs = path.join(__dirname, "../templates/views");
@@ -97,6 +98,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is started!");
+app.listen(port, () => {
+  console.log(`Server is started!`);
 });
